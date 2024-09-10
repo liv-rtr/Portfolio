@@ -1,0 +1,409 @@
+﻿state,country,steel,construction,height,speed,length,inversions,numinversions,duration,gforce,opened,region,continent
+CA,US,1,Steel,32.004,81,822.96,Yes,5,120,4,1994,1,North America
+CA,US,1,Steel,,45.36,814.121,No,0,,,1979,1,North America
+CA,US,1,Steel,35.5092,76.14,284.988,Yes,3,108,5.2,1990,1,North America
+CA,US,1,Steel,35.5092,76.14,284.988,Yes,3,168,6.2,1998,1,North America
+CA,US,1,Steel,,89.1,1850.75,Yes,1,156,,2001,1,North America
+CA,US,1,Steel,,,,No,0,,,1999,1,North America
+CA,US,1,Steel,5.4864,32.4,149.962,No,0,,,2004,1,North America
+CA,US,1,Steel,7.9248,35.64,359.969,No,0,,,2000,1,North America
+CA,US,0,Wood,38.1,100.44,1318.26,No,0,150,3.2,1978,1,North America
+CA,US,1,Steel,58.2168,105.3,366.979,Yes,3,92,4.5,2001,1,North America
+CA,US,1,Steel,31.0896,81,649.224,Yes,4,105,,1976,1,North America
+CA,US,1,Steel,,,,No,0,,,1999,1,North America
+CA,US,1,Steel,,,,No,0,,,2001,1,North America
+CA,US,1,Steel,31.0896,81,688.848,Yes,3,146,,1993,1,North America
+CA,US,1,Steel,,,,No,0,,,1990,1,North America
+CA,US,1,Steel,,,,No,0,,,1995,1,North America
+CA,US,1,Steel,,,,No,0,,,1994,1,North America
+CA,US,1,Steel,8.2296,34.02,206.959,No,0,44,,1993,1,North America
+CA,US,0,Wood,35.9664,90.72,1381.66,No,0,160,3.1,1998,1,North America
+CA,US,0,Wood,22.2504,89.1,792.48,No,0,,,1925,1,North America
+CA,US,0,Wood,21.336,89.1,804.672,No,0,112,,1924,1,North America
+CA,US,1,Steel,,,,No,0,,,2008,1,North America
+CA,US,1,Steel,21.336,56.7,789.432,No,0,150,,1971,1,North America
+CA,US,1,Steel,71.628,137.7,1371.6,No,0,180,,2000,1,North America
+CA,US,0,Wood,27.7368,89.1,990.6,No,0,160,,1986,1,North America
+CA,US,1,Steel,,,,No,0,,,1992,1,North America
+CA,US,1,Steel,,,12.192,No,0,,,2007,1,North America
+CA,US,1,Steel,39.9288,81,308.762,Yes,3,90,5,1998,1,North America
+CA,US,1,Steel,19.812,56.7,793.09,No,0,120,,1995,1,North America
+CA,US,1,Steel,28.956,68.04,,No,0,300,3,2004,1,North America
+CA,US,1,Steel,33.2232,79.38,688.848,Yes,5,96,,1998,1,North America
+CA,US,1,Steel,,,,No,0,,,,1,North America
+CA,US,1,Steel,,,,No,0,,,,1,North America
+CA,US,1,Steel,24.384,,,No,0,,,1959,1,North America
+CA,US,1,Steel,45.72,105.3,1200,Yes,7,195,4.5,2000,1,North America
+CA,US,1,Steel,8.2296,34.02,206.959,No,0,44,,2001,1,North America
+CA,US,1,Steel,45.1104,89.1,243.84,Yes,1,36,,1978,1,North America
+CA,US,1,Steel,,43.74,,No,0,,,2001,1,North America
+CA,US,1,Steel,18.288,89.1,822.96,No,0,90,,1988,1,North America
+CA,US,1,Steel,3.048,16.2,106.68,No,0,,,1971,1,North America
+CA,US,1,Steel,13.4112,61.56,396.24,No,0,,,2008,1,North America
+CA,US,1,Steel,,,383.134,No,0,,,2001,1,North America
+CA,US,1,Steel,11.5824,51.84,651.967,No,0,,,2001,1,North America
+CA,US,1,Steel,,64.8,548.64,No,0,120,,2004,1,North America
+CA,US,1,Steel,34.4424,89.1,1053.69,Yes,1,132,4.9,1976,1,North America
+CA,US,1,Steel,47.5488,105.3,1331.98,Yes,6,180,4.2,1998,1,North America
+CA,US,1,Steel,3.9624,,79.8576,No,0,,,1999,1,North America
+CA,US,0,Wood,28.6512,81,1003.1,No,0,,,1999,1,North America
+CA,US,1,Steel,,,,No,0,,,,1,North America
+CA,US,1,Steel,,,,No,0,,,2002,1,North America
+CA,US,1,Steel,,,,No,0,,,,1,North America
+CA,US,1,Steel,,,,No,0,,,,1,North America
+CA,US,1,Steel,,,396.24,No,0,132,,1987,1,North America
+CA,US,1,Steel,16.764,,396.24,No,0,,,1996,1,North America
+CA,US,1,Steel,45.72,102.06,1214.63,Yes,7,180,,2003,1,North America
+CA,US,1,Steel,27.432,81,792.48,No,0,116,,1995,1,North America
+CA,US,1,Steel,9.7536,,,No,0,,2.5,2008,1,North America
+CA,US,1,Steel,,,,No,0,,,2000,1,North America
+CA,US,1,Steel,18.8976,59.94,429.768,No,0,,3.3,2007,1,North America
+CA,US,1,Steel,44.5008,89.1,952.5,Yes,6,150,,2004,1,North America
+CA,US,1,Steel,,,,No,0,,,2005,1,North America
+CA,US,1,Steel,126.492,162,376.428,No,0,28,4.5,1997,1,North America
+CA,US,1,Steel,51.816,100.44,1097.89,Yes,4,,,2006,1,North America
+CA,US,1,Steel,,,,No,0,,,1999,1,North America
+CA,US,1,Steel,15.5448,56.7,399.898,No,0,,,2001,1,North America
+CA,US,0,Wood,28.956,81,876.91,No,0,180,,2009,1,North America
+CA,US,1,Steel,,,,No,0,,,1999,1,North America
+CA,US,1,Steel,,,,No,0,,,2005,1,North America
+CA,US,1,Steel,9.144,,146.304,No,0,55,,1983,1,North America
+CA,US,1,Steel,,,,No,0,,,2001,1,North America
+CA,US,1,Steel,16.1544,50.22,411.785,No,0,111,,2008,1,North America
+CA,US,1,Steel,10.668,,274.32,No,0,,,1999,1,North America
+CA,US,1,Steel,45.72,105.3,192.024,No,0,,,2001,1,North America
+CA,US,1,Steel,57.3024,113.4,1167.38,Yes,7,150,,1990,1,North America
+CA,US,1,Steel,27.7368,64.8,585.216,Yes,2,134,,1991,1,North America
+CA,US,1,Steel,53.34,123.12,1100.33,Yes,2,,4,2002,1,North America
+CA,US,1,Steel,62.484,132.84,671.17,No,0,62,,2002,1,North America
+WA,US,0,Wood,16.764,81,807.72,No,0,105,,1935,1,North America
+WA,US,1,Steel,,,,No,0,,,,1,North America
+WA,US,1,Steel,,,,No,0,,,1995,1,North America
+WA,US,1,Steel,,,,No,0,,,1997,1,North America
+WA,US,1,Steel,12.192,,,No,0,,,2002,1,North America
+WA,US,1,Steel,,,,No,0,,,1996,1,North America
+WA,US,1,Steel,,,,No,0,,,,1,North America
+WA,US,1,Steel,,,,No,0,,,,1,North America
+WA,US,0,Wood,22.86,81,792.48,No,0,,,2003,1,North America
+WA,US,1,Steel,,,,No,0,,,1985,1,North America
+WA,US,1,Steel,,,,Yes,3,60,,1997,1,North America
+WA,US,1,Steel,,,440.436,No,0,,,1993,1,North America
+OR,US,1,Steel,,,,No,0,,,1996,1,North America
+OR,US,1,Steel,,,487.68,No,0,150,,1983,1,North America
+OR,US,1,Steel,10.9728,,364.846,Yes,1,,,1996,1,North America
+OR,US,1,Steel,,,,No,0,,,1999,1,North America
+IN,US,0,Wood,16.764,72.9,640.08,No,0,,,2001,1,North America
+IN,US,1,Steel,,,,No,0,,,1971,1,North America
+IN,US,0,Wood,23.4696,82.62,881.177,No,0,,,1994,1,North America
+IN,US,1,Steel,3.9624,,79.8576,No,0,,,1999,1,North America
+IN,US,1,Steel,5.7912,30.78,76.8096,No,0,,,2001,1,North America
+IN,US,0,Wood,30.1752,95.58,1232,No,0,120,,2000,1,North America
+IN,US,0,Wood,10.668,32.4,426.72,No,0,,,2002,1,North America
+IN,US,0,Wood,24.384,77.76,853.44,No,0,90,,1995,1,North America
+IN,US,1,Steel,,,,No,0,,,2007,1,North America
+IN,US,1,Steel,,,,No,0,,,2008,1,North America
+IN,US,1,Steel,29.2608,66.42,,Yes,2,,,2008,1,North America
+IN,US,1,Steel,13.4112,50.22,537.972,No,0,,,1984,1,North America
+IN,US,0,Wood,49.6824,108.54,1963.52,No,0,165,,2006,1,North America
+TX,US,1,Steel,32.004,81,822.96,Yes,5,120,4,1999,1,North America
+TX,US,1,Steel,,,,No,0,,,1975,1,North America
+TX,US,0,Wood,29.2608,82.62,986.333,No,0,,,2007,1,North America
+TX,US,1,Steel,35.3568,76.14,284.988,Yes,3,108,5.2,1999,1,North America
+TX,US,1,Steel,6.096,,,No,0,,,2004,1,North America
+TX,US,1,Steel,,,,No,0,,,1968,1,North America
+TX,US,1,Steel,,,,No,0,,,,1,North America
+TX,US,1,Steel,2.4384,,42.672,No,0,,,,1,North America
+TX,US,1,Steel,35.3568,76.14,284.988,Yes,3,108,5.2,1989,1,North America
+TX,US,1,Steel,,,,No,0,,,,1,North America
+TX,US,1,Steel,32.004,81,820.826,Yes,5,120,,2008,1,North America
+TX,US,1,Steel,32.9184,81,780.898,Yes,5,120,4.6,1997,1,North America
+TX,US,1,Steel,8.2296,,349.91,No,0,,,2009,1,North America
+TX,US,1,Steel,,,,No,0,,,2007,1,North America
+TX,US,1,Steel,30.48,,,No,0,210,,2007,1,North America
+TX,US,0,Wood,21.6408,85.86,813.816,No,0,90,,1980,1,North America
+TX,US,1,Steel,18.288,51.84,454.152,No,0,90,,1987,1,North America
+TX,US,1,Steel,3.6576,,85.344,No,0,,,1971,1,North America
+TX,US,1,Steel,,,,No,0,,,1976,1,North America
+TX,US,1,Steel,10.668,,731.52,No,0,180,,1966,1,North America
+TX,US,1,Steel,6.096,,277.368,No,0,70,,1969,1,North America
+TX,US,1,Steel,,,,No,0,,,2004,1,North America
+TX,US,1,Steel,66.4464,113.4,396.24,Yes,1,,,1998,1,North America
+TX,US,1,Steel,23.7744,97.2,824.484,Yes,4,75,4.5,1999,1,North America
+TX,US,0,Wood,54.5592,105.3,1548.38,No,0,146,,1992,1,North America
+TX,US,1,Steel,22.2504,,731.52,No,0,144,,1997,1,North America
+TX,US,1,Steel,,,84.7344,No,0,,,1992,1,North America
+TX,US,1,Steel,19.812,64.8,457.2,No,0,,,1996,1,North America
+TX,US,1,Steel,3.9624,22.68,69.7992,No,0,,,2004,1,North America
+TX,US,1,Steel,35.3568,97.2,1097.28,Yes,2,120,,1978,1,North America
+TX,US,1,Steel,45.72,105.3,1127.76,No,0,100,3.5,1999,1,North America
+TX,US,1,Steel,51.2064,113.4,1226.82,Yes,6,155,,2000,1,North America
+TX,US,0,Wood,43.5864,100.44,1499.62,No,0,120,,1990,1,North America
+TX,US,1,Steel,24.384,,624.84,Yes,2,,,1985,1,North America
+TX,US,1,Steel,74.676,137.7,1619.1,No,0,210,,2001,1,North America
+TX,US,1,Steel,14.6304,50.22,411.785,No,0,,,2007,1,North America
+TX,US,1,Steel,16.1544,50.22,411.785,No,0,111,,2008,1,North America
+TX,US,1,Steel,4.8768,,,No,0,,,2001,1,North America
+IL,US,0,Wood,38.7096,106.92,1417.32,No,0,143,,1981,1,North America
+IL,US,1,Steel,30.48,81,822.96,Yes,5,120,,1992,1,North America
+IL,US,1,Steel,,,369.722,No,0,120,,2008,1,North America
+IL,US,1,Steel,31.0896,81,649.224,Yes,4,105,,1976,1,North America
+IL,US,1,Steel,,,,No,0,,,1993,1,North America
+IL,US,1,Steel,30.48,89.1,883.92,Yes,2,120,,1990,1,North America
+IL,US,0,Wood,8.5344,,213.36,No,0,50,,1950,1,North America
+IL,US,1,Steel,,,,No,0,,,,1,North America
+IL,US,1,Steel,,24.3,,No,0,,,1997,1,North America
+IL,US,1,Steel,12.8016,46.98,419.71,No,0,90,2.5,2004,1,North America
+IL,US,1,Steel,61.5696,118.26,1541.37,No,0,150,,1999,1,North America
+IL,US,1,Steel,,,,No,0,,,2000,1,North America
+IL,US,1,Steel,8.2296,34.02,206.959,No,0,44,,1998,1,North America
+IL,US,1,Steel,32.3088,82.62,852.83,Yes,2,180,,2003,1,North America
+IL,US,1,Steel,6.7056,,,No,0,45,,2002,1,North America
+IL,US,1,Steel,56.388,113.4,192.024,No,0,,,2001,1,North America
+IL,US,0,Wood,30.48,81,1054,No,0,105,,1995,1,North America
+IL,US,1,Steel,21.336,68.04,944.88,No,0,120,,1976,1,North America
+OH,US,1,Steel,19.2024,56.7,903.122,No,0,140,,1991,1,North America
+OH,US,1,Steel,13.716,64.8,597.408,No,0,64,,2005,1,North America
+OH,US,0,Wood,33.528,103.68,2243.02,No,0,250,,1979,1,North America
+OH,US,0,Wood,23.7744,64.8,779.678,No,0,105,,1964,1,North America
+OH,US,1,Steel,14.6304,68.04,774.192,No,0,162,,1969,1,North America
+OH,US,1,Steel,25.908,77.76,624.84,Yes,3,120,,1976,1,North America
+OH,US,1,Steel,70.104,129.6,1609.95,No,0,180,,2009,1,North America
+OH,US,1,Steel,19.2024,64.8,588.874,No,0,152,,1985,1,North America
+OH,US,0,Wood,,,411.48,No,0,90,,1972,1,North America
+OH,US,1,Steel,35.052,81,1018.03,Yes,5,130,4.3,2007,1,North America
+OH,US,1,Steel,23.7744,82.62,716.89,No,0,112,,1993,1,North America
+OH,US,1,Steel,22.5552,87.48,824.484,Yes,4,60,4.5,1996,1,North America
+OH,US,1,Steel,38.1,97.2,1199.39,No,0,140,,1978,1,North America
+OH,US,1,Steel,39.9288,81,308.762,Yes,3,90,5,1999,1,North America
+OH,US,1,Steel,23.1648,64.8,853.44,No,0,120,,1987,1,North America
+OH,US,1,Steel,5.7912,9.72,135.026,No,0,50,,1979,1,North America
+OH,US,1,Steel,,,60.6552,No,0,52,,1992,1,North America
+OH,US,1,Steel,,,,No,0,,,1952,1,North America
+OH,US,1,Steel,62.484,116.64,1556.31,No,0,120,,1989,1,North America
+OH,US,1,Steel,44.196,97.2,1188.72,Yes,4,160,,1996,1,North America
+OH,US,1,Steel,32.004,113.4,1356.36,Yes,2,150,,2007,1,North America
+OH,US,0,Wood,49.0728,105.3,1654.15,No,0,193,,1991,1,North America
+OH,US,1,Steel,94.488,150.66,2010.16,No,0,140,,2000,1,North America
+OH,US,1,Steel,,,,No,0,,,,1,North America
+OH,US,1,Steel,12.192,,335.28,No,0,84,,1999,1,North America
+OH,US,0,Wood,,98.82,1040.89,No,0,120,,1972,1,North America
+OH,US,1,Steel,41.7576,92.34,1155.19,Yes,6,136,,1994,1,North America
+OH,US,1,Steel,14.6304,42.12,341.986,No,0,90,2.2,2001,1,North America
+OH,US,0,Wood,10.668,,402.336,No,0,90,,1956,1,North America
+OH,US,0,Wood,66.4464,126.36,2143.35,Yes,1,140,4.5,2000,1,North America
+OH,US,0,Wood,,,,No,0,63,,1996,1,North America
+OH,US,1,Steel,128.016,194.4,853.44,No,0,30,,2003,1,North America
+OH,US,0,Wood,,,,No,0,93,,1993,1,North America
+OH,US,1,Steel,45.1104,89.1,1158.24,Yes,6,150,,1987,1,North America
+OH,US,1,Steel,65.532,116.64,,No,0,,,2002,1,North America
+OH,US,1,Steel,15.24,64.8,559.918,No,0,85,,1979,1,North America
+OH,US,1,Steel,12.8016,45.36,334.975,No,0,66,,1999,1,North America
+CO,US,1,Steel,35.3568,76.14,284.988,Yes,3,108,5.2,1999,1,North America
+CO,US,1,Steel,3.6576,,,No,0,,,1995,1,North America
+CO,US,1,Steel,,,,No,0,,,,1,North America
+CO,US,0,Wood,24.384,,853.44,No,0,120,,1940,1,North America
+CO,US,1,Steel,,,85.344,No,0,,,1989,1,North America
+CO,US,1,Steel,,,,No,0,,,2007,1,North America
+CO,US,1,Steel,,,,No,0,,,2000,1,North America
+CO,US,1,Steel,29.8704,69.66,69.7992,No,0,120,4.5,2004,1,North America
+CO,US,1,Steel,,,,No,0,,,,1,North America
+CO,US,1,Steel,33.2232,79.38,688.848,Yes,5,96,,1997,1,North America
+CO,US,1,Steel,,,,No,0,,,,1,North America
+CO,US,1,Steel,17.0688,72.9,193.548,Yes,1,66,4,1995,1,North America
+CO,US,0,Wood,30.48,89.1,1414.27,No,0,,3.1,1995,1,North America
+CO,US,1,Steel,12.4968,34.02,350.52,No,0,48,,1955,1,North America
+MX,MX,1,Steel,33.3,80,689,Yes,5,96,,2000,2,Latin America
+MX,MX,1,Steel,35.5,75.6,285,Yes,3,108,5.2,1982,2,Latin America
+MX,MX,1,Steel,,,369.7,No,0,120,,2009,2,Latin America
+MX,MX,0,Wood,32,88.5,955.8,No,0,,,2000,2,Latin America
+MX,MX,1,Steel,8.5,34.9,207,No,0,44,,1993,2,Latin America
+MX,MX,1,Steel,67,120,1700,No,0,184,,2004,2,Latin America
+MX,MX,1,Steel,8,36,360,No,0,,,1981,2,Latin America
+MX,MX,1,Steel,33.8,85.3,1049.7,Yes,3,,4.7,2007,2,Latin America
+MX,MX,0,Wood,33.5,,1219.2,No,0,,,1964,2,Latin America
+MX,MX,1,Steel,13,46.8,420,No,0,90,2.5,1999,2,Latin America
+MX,MX,1,Steel,8,36,360,No,0,,,2001,2,Latin America
+MX,MX,1,Steel,22.9,88.5,762,No,0,,,1994,2,Latin America
+MX,MX,1,Steel,3.3,26,60.2,No,0,,,2006,2,Latin America
+MX,MX,1,Steel,11,,365,Yes,1,,,2002,2,Latin America
+MX,MX,1,Steel,11,,365,Yes,1,,,2002,2,Latin America
+MX,MX,1,Steel,19.5,60,350,Yes,2,,,2001,2,Latin America
+MX,MX,1,Steel,35.1,86.9,1120.1,Yes,4,,,2008,2,Latin America
+CR,CR,1,Steel,19.5,60,350,Yes,2,,,2005,2,Latin America
+CR,CR,1,Steel,4,,80,No,0,,,2002,2,Latin America
+CR,CR,1,Steel,35.5,75.6,285,Yes,3,96,5.2,2012,2,Latin America
+CR,CR,1,Steel,3.4,,,No,0,,,1984,2,Latin America
+CR,CR,1,Steel,4,,80,No,0,,,2002,2,Latin America
+GT,GT,1,Steel,,88,,Yes,8,,,,2,Latin America
+GT,GT,1,Steel,8,36,360,No,0,,,2002,2,Latin America
+GT,GT,1,Steel,13,65,364,No,0,,,2010,2,Latin America
+CO,CO,1,Steel,18,90.1,860.1,Yes,2,,,2004,2,Latin America
+CO,CO,1,Steel,21.3,,381,Yes,2,70,,2000,2,Latin America
+CO,CO,1,Steel,,,872.3,No,0,,,2010,2,Latin America
+CO,CO,1,Steel,17.3,66.2,787.3,No,0,151,2.1,1999,2,Latin America
+CO,CO,1,Steel,15,,330,No,0,,,,2,Latin America
+VE,VE,1,Steel,10.1,,200,Yes,1,60,,2007,2,Latin America
+BR,BR,1,Steel,42,85.3,220.1,Yes,1,,,1999,2,Latin America
+BR,BR,1,Steel,35.5,75.6,285,Yes,3,108,,1997,2,Latin America
+BR,BR,1,Steel,24.5,77,592,Yes,1,,,,2,Latin America
+BR,BR,1,Steel,11,,365,Yes,1,,,,2,Latin America
+BR,BR,1,Steel,19.5,60,350,Yes,2,,,2008,2,Latin America
+BR,BR,1,Steel,11,45,325,No,0,55,,2006,2,Latin America
+BR,BR,1,Steel,33.3,80,689,Yes,5,96,,2008,2,Latin America
+BR,BR,1,Steel,22.9,64.4,731.5,Yes,2,,,,2,Latin America
+BR,BR,1,Steel,11,,365,Yes,1,,,,2,Latin America
+BR,BR,1,Steel,9.5,40,320,No,0,,,1997,2,Latin America
+BR,BR,0,Wood,42.4,103,1030.2,No,0,,,1999,2,Latin America
+BR,BR,1,Steel,61,104.6,346.6,Yes,1,0.3,5,2013,2,Latin America
+BR,BR,1,Steel,61,104.6,374.6,Yes,2,0.5,5,2014,2,Latin America
+BR,BR,1,Steel,33,85,875,Yes,10,,,2013,2,Latin America
+BR,BR,1,Steel,8,28,175,Yes,0,,,2012,2,Latin America
+BR,BR,1,Steel,58.4,105.6,367,Yes,3,92,4.5,,2,Latin America
+BR,BR,1,Steel,12.4,,,Yes,1,,,,2,Latin America
+BR,BR,1,Steel,11,45,325,No,0,55,,2002,2,Latin America
+BR,BR,1,Steel,9.5,40,320,No,0,,,,2,Latin America
+AR,AR,1,Steel,36.2,93.2,751,No,0,,,1982,2,Latin America
+AR,AR,1,Steel,5,72,210,No,0,,,1984,2,Latin America
+AR,AR,1,Steel,13.5,50,538,No,0,,,1982,2,Latin America
+AR,AR,1,Steel,3,30,190,No,0,,,1983,2,Latin America
+AR,AR,1,Steel,38,91,1816,No,0,,,1983,2,Latin America
+AR,AR,1,Steel,13.5,,460,No,0,,,1982,2,Latin America
+AR,AR,1,Steel,35.5,75.6,285,Yes,3,128,5.2,1998,2,Latin America
+AR,AR,1,Steel,33.3,80,689,Yes,5,96,,1999,2,Latin America
+AR,AR,1,Steel,,,340,No,0,,,2010,2,Latin America
+AR,AR,1,Steel,8,36,360,No,0,,,1998,2,Latin America
+CL,CL,1,Steel,35.5,75.6,285,Yes,3,108,5.2,1998,2,Latin America
+CL,CL,1,Steel,33.3,80,689,Yes,5,96,,2008,2,Latin America
+CL,CL,1,Steel,13,46.8,420,No,0,90,2.5,2006,2,Latin America
+CO,CO,1,Steel,15,,330,No,0,,,2012,2,Latin America
+EQ,EQ,1,Steel,4,,80,No,0,,,2005,2,Latin America
+EQ,EQ,1,Steel,11,,365,Yes,1,,,2005,2,Latin America
+PE,PE,1,Steel,13.5,50,538,No,0,,,,2,Latin America
+PE,PE,1,Steel,3.6,22.7,60,No,0,,,2002,2,Latin America
+CO,CO,1,Steel,10,,,No,0,,,2011,2,Latin America
+F,F,1,Steel,,65,400,No,0,60,,2005,3,Europe
+F,F,1,Steel,13.5,50,538,No,0,,,2003,3,Europe
+F,F,0,Wood,36,,1200,No,0,130,,1989,3,Europe
+F,F,1,Steel,17,55,500,No,0,,,2003,3,Europe
+F,F,1,Steel,6.1,,,No,0,,,2006,3,Europe
+F,F,1,Steel,22,65,1500,No,0,236,,1992,3,Europe
+F,F,1,Steel,35.5,75.6,285,Yes,3,128,5.2,1992,3,Europe
+F,F,1,Steel,35.5,76,285,Yes,3,128,5.2,1992,3,Europe
+F,F,1,Steel,8,36,360,No,0,,,1992,3,Europe
+F,F,1,Steel,8,36,360,No,0,,,1992,3,Europe
+F,F,1,Steel,10,40,300,No,0,,,2007,3,Europe
+F,F,1,Steel,8.5,35,207,No,0,44,,2003,3,Europe
+F,F,1,Steel,5,,200,No,0,75,,1987,3,Europe
+F,F,1,Steel,30,65,,Yes,4,,,2004,3,Europe
+F,F,1,Steel,,60,650,No,0,,,2009,3,Europe
+F,F,1,Steel,4.5,,,No,0,,,2005,3,Europe
+F,F,1,Steel,15,,380,No,0,,,2005,3,Europe
+F,F,1,Steel,36,90,950,Yes,7,80,,1989,3,Europe
+F,F,1,Steel,,,200,No,0,,,2006,3,Europe
+F,F,1,Steel,10,,,No,0,,,2001,3,Europe
+F,F,1,Steel,,,600,Yes,1,75,,1993,3,Europe
+F,F,1,Steel,3,,85.3,No,0,86,,2004,3,Europe
+F,F,1,Steel,6,32,199,No,0,90,,1990,3,Europe
+F,F,1,Steel,6,,,No,0,,,2004,3,Europe
+F,F,1,Steel,13,47,420,No,0,90,2.5,2006,3,Europe
+F,F,1,Steel,24.4,92,1037.2,Yes,3,70,5,2002,3,Europe
+F,F,1,Steel,8,36,360,No,0,,,2009,3,Europe
+F,F,1,Steel,3.3,26,60.2,No,0,48,,1991,3,Europe
+F,F,1,Steel,14,45,370,No,0,,,2007,3,Europe
+F,F,1,Steel,8,36,360,No,0,,,,3,Europe
+F,F,1,Steel,,,100,No,0,,,2008,3,Europe
+F,F,1,Steel,32,71,1000,Yes,3,125,,1995,3,Europe
+F,F,1,Steel,20,60,800,No,0,135,4.5,2000,3,Europe
+F,F,1,Steel,6,34,135,No,0,,,2006,3,Europe
+F,F,1,Steel,,40,,No,0,60,,2001,3,Europe
+F,F,1,Steel,13,40,360,No,0,,,1990,3,Europe
+F,F,0,Wood,30,84,1232.6,No,0,125,,1997,3,Europe
+F,F,1,Steel,,60,900,No,0,,,2001,3,Europe
+F,F,1,Steel,10,40,300,No,0,60,,2009,3,Europe
+F,F,1,Steel,13,47,420,No,0,90,2.5,2007,3,Europe
+F,F,1,Steel,10.7,42,410,No,0,75,,1994,3,Europe
+F,F,1,Steel,,,,Yes,3,75,,1989,3,Europe
+F,F,1,Steel,15,45,370,No,0,70,,2007,3,Europe
+F,F,1,Steel,15,,320,No,0,,,2000,3,Europe
+D,D,1,Steel,8.5,35,207,No,0,44,,1989,3,Europe
+D,D,1,Steel,4,,80,No,0,,,2006,3,Europe
+D,D,1,Steel,6,45,264,No,0,,,1984,3,Europe
+D,D,1,Steel,30,80,390,No,0,200,,2005,3,Europe
+D,D,1,Steel,8.5,35,207,No,0,44,,1996,3,Europe
+D,D,0,Wood,27.8,80,1099,No,0,90,,1999,3,Europe
+D,D,1,Steel,30,63,706,Yes,4,,,1983,3,Europe
+D,D,1,Steel,26,80,,Yes,4,,4,2006,3,Europe
+D,D,1,Steel,38,100,1056,Yes,4,150,3.8,2009,3,Europe
+D,D,1,Steel,35.5,75.6,285,Yes,3,168,5.2,2000,3,Europe
+D,D,1,Steel,6.1,,,No,0,,,1991,3,Europe
+D,D,1,Steel,6.1,,,No,0,,,2003,3,Europe
+D,D,1,Steel,6.1,,,No,0,,,1998,3,Europe
+D,D,1,Steel,6.1,,,No,0,,,2000,3,Europe
+D,D,1,Steel,6.1,,,No,0,,,1995,3,Europe
+D,D,1,Steel,6.1,,,No,0,,,2000,3,Europe
+D,D,1,Steel,6.1,,,No,0,,,1988,3,Europe
+D,D,1,Steel,6.1,,,No,0,,,1996,3,Europe
+D,D,1,Steel,6.1,,,No,0,,,1991,3,Europe
+D,D,1,Steel,26,50,1280,No,0,175,,1996,3,Europe
+D,D,0,Wood,60,120,1344,No,0,175,,2001,3,Europe
+D,D,1,Steel,15,45,370,No,0,70,,1997,3,Europe
+D,D,1,Steel,19,100,650,No,0,49,,2007,3,Europe
+D,D,1,Steel,19.5,,410,No,0,75,,1996,3,Europe
+D,D,1,Steel,4.9,22.5,164.9,No,0,,,2007,3,Europe
+D,D,1,Steel,9,39,222,No,0,,,1998,3,Europe
+D,D,1,Steel,5.5,33,150,No,0,,,2003,3,Europe
+D,D,1,Steel,4.5,30,128,No,0,,,1992,3,Europe
+D,D,0,Wood,24.5,73.4,725.1,No,0,,,2009,3,Europe
+D,D,1,Steel,28,80,980,No,0,273,4,1997,3,Europe
+D,D,1,Steel,25.5,60,900,No,0,198,4,1989,3,Europe
+D,D,1,Steel,53,120,1220,No,0,75,4.5,2001,3,Europe
+D,D,1,Steel,4.5,30,128,No,0,,,1992,3,Europe
+D,D,1,Steel,6,32,199,No,0,,,1987,3,Europe
+D,D,1,Steel,8,36,360,No,0,,,2003,3,Europe
+D,D,1,Steel,4.5,30,128,No,0,,,1995,3,Europe
+D,D,1,Steel,4.5,30,128,No,0,,,,3,Europe
+D,D,1,Steel,9,39,222,No,0,,,1998,3,Europe
+D,D,1,Steel,16,60,860,No,0,,,2002,3,Europe
+D,D,1,Steel,,42,200,No,0,,,2008,3,Europe
+D,D,1,Steel,40,100,,Yes,1,,,2009,3,Europe
+D,D,1,Steel,3.3,26,60.2,No,0,,,1995,3,Europe
+D,D,1,Steel,8,36,360,No,0,,,1999,3,Europe
+D,D,1,Steel,14,45,370,No,0,110,,2000,3,Europe
+D,D,1,Steel,6.1,,,No,0,,,2005,3,Europe
+D,D,1,Steel,4,24,70,No,0,,,2003,3,Europe
+D,D,1,Steel,6,45,370,No,0,,,1985,3,Europe
+D,D,1,Steel,16,,480,No,0,,3,1998,3,Europe
+D,D,1,Steel,17.5,55,532,No,0,80,,2004,3,Europe
+D,D,1,Steel,13.5,,460,No,0,,,1989,3,Europe
+D,D,1,Steel,6,32,199,No,0,,,1996,3,Europe
+D,D,1,Steel,4.5,30,128,No,0,,,2008,3,Europe
+D,D,1,Steel,13,,294,No,0,,,2007,3,Europe
+D,D,1,Steel,33.3,80,689,Yes,5,96,,1999,3,Europe
+D,D,0,Wood,30,90,860,No,0,,,2008,3,Europe
+D,D,1,Steel,8,36,360,No,0,,,1979,3,Europe
+D,D,1,Steel,8,36,360,No,0,65,,1986,3,Europe
+D,D,1,Steel,3.3,26,60.2,No,0,,,1983,3,Europe
+D,D,1,Steel,16,56.3,383,No,0,185,,1999,3,Europe
+D,D,1,Steel,33.3,80,689,Yes,5,96,,2001,3,Europe
+D,D,1,Steel,26,79,741,Yes,1,130,,1979,3,Europe
+D,D,1,Steel,10.5,46,290,No,0,,2.5,1999,3,Europe
+D,D,1,Steel,15,65,400,No,0,70,,2006,3,Europe
+D,D,1,Steel,23,70,836,No,0,240,3,2000,3,Europe
+D,D,1,Steel,9,39,222,No,0,,,1993,3,Europe
+D,D,1,Steel,15.8,56,400,No,0,,,2002,3,Europe
+D,D,1,Steel,16,50,522,No,0,70,,1993,3,Europe
+D,D,1,Steel,8,36,360,No,0,,,1986,3,Europe
+D,D,1,Steel,6.1,,,No,0,,,1991,3,Europe
+D,D,1,Steel,6.1,,,No,0,,,1989,3,Europe
+D,D,1,Steel,19,50,487,No,0,105,3,1985,3,Europe
+D,D,1,Steel,27,53,990,No,0,100,,1994,3,Europe
+D,D,1,Steel,73,127,1620,No,0,240,4,2002,3,Europe
+D,D,1,Steel,46,105,150,Yes,2,50,5,2004,3,Europe
+D,D,1,Steel,11.1,36,300,No,0,60,,2001,3,Europe
+D,D,1,Steel,19.5,60,350,Yes,2,,,1981,3,Europe
+D,D,1,Steel,22.9,64.4,731.5,Yes,2,85,,1979,3,Europe
+D,D,1,Steel,14,45,370,No,0,110,,1999,3,Europe
+D,D,1,Steel,,,1280,No,0,240,,1988,3,Europe
+D,D,1,Steel,3.5,25,60,No,0,,,2007,3,Europe
+D,D,1,Steel,17.4,66,465,No,0,,,2002,3,Europe
+D,D,1,Steel,19.5,60,350,Yes,2,60,,1982,3,Europe
