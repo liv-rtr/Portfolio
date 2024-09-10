@@ -1,5 +1,5 @@
 # Data Cleaning
-In this folder you will find the following three items:
+In this folder you will find the following items:
 ### 1. Cleaned Data - Folder
   Contains 5 .csv files of the cleaned versions of each dataset (see README inside for more details)
 ### 2. Raw Data - Folder
