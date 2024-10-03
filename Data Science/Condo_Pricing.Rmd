@@ -1,0 +1,291 @@
+---
+output: html_notebook
+---
+# Using Machine Learning to Predict Zillow Home Value Index' (ZHVI's) for condominiums(condos) and co-operatives(co-ops) across the United States
+This project explores various machine learning techniques to predict the Zillow Home Value Index (ZHVI) for condominiums(condos) and co-operatives(co-ops) across the United States using time-series data. The raw time-series data for this project can be found at https://www.zillow.com/research/data/. Specifically, the .csv file can be found under the "HOME VALUE" section, choosing "ZHVI Condo/Co-op Time Series ($)" for "Data Type" and "Metro & U.S." for "Geography". This data was then exported to Excel Power Query where it was unpivoted and merged with the 'United States Cities Database' (which can be found here: https://simplemaps.com/data/us-cities) to extract latitude and longitudes for each city. The unpivoted and merged data was then was cleaned further in-code, by removing missing ZHVI values, and manually inputting missing latitude and longitude information from Google. The target variable used in this project is "ZHVI" and the variables "DateFull", "latitude", "Longitude", and "SizeRank" will be used for the prediction of this target variable. All other, non-numerical- variables will be removed either because they are unneccessary or there is no way to numerically encode them without unintentionally introducing ranking into these unranked categorical variables.
+
+This project also includes log transformation of the target variable to reduce skewness and improve model performance. Then, to assess the predictive powers of different approaches, several models were applied, including multiple linear regression, ridge regression, lasso regression, principal component regression (PCR), partial least squares (PLS) regression, and regression trees. The data was split into training and testing sets, with model evaluation based on Root Mean Squared Error (RMSE). Cross-validation was used to tune parameters like lambda in ridge and lasso regression models and the number of components in PCR and PLS models. These machine learning models will be used to provide insight into the prediction of real estate prices and the importance of model selection and tuning for improving the accuracy of these predictions.
+
+### Loading Libraries
+```{r}
+# Load necessary libraries, uncomment necessary lines if specified package is not installed
+
+# install.packages("tidyverse")
+library(tidyverse)
+# install.packages("dplyr")
+library(dplyr)
+# install.packages("readr")
+library(readr)
+# install.packages("ggplot2")
+library(ggplot2)
+# install.packages("psych")
+library(psych)
+#install.packages("ggmap")
+library(ggmap)
+```
+
+## Pre-processing and Data Analysis
+To begin, the unpivoted version of the time-series data was loaded. The 'head()' function was used to show the first 6 rows of this data to understand its structure. This shows the variables included in the data as long as their data types. The numerical variables include "RegionID", "SizeRank", "Latitude", "Longitude", and "ZHVI". The other variables are encoded as strings, which include "RegionName", "RegionType", "StateName", and "DateFull". 
+
+Out of these variables "RegionID", "RegionType", "StateName" will not be needed in this project. This is because every region besides 'United States' has the same value for "RegionType" and the 'United States' will be removed before modeling so "RegionType" will provide no extra information for the models. Also, "StateName" was used in Excel Power Query to provide unique longitudes and latitudes for each unique combination of "RegionName" and "StateName" which handles numerically encoding each of these unique combinations. Since the regions are numerically encoded with their latitudes and longitudes, "RegionID" is no longer needed as a unique identifier."RegionName" will also be removed before modeling, however it will be used for plotting so it will not be removed yet. The last variable encoded as a string is "DateFull", to handle this, the date was converted to the type "Date" and then to the type "Numeric". After removing the variables stated above the dimensions of the data are 154216 rows by 7 columns.
+```{r}
+# Load unpivoted data
+condos <- read.csv("/Users/olivia/Downloads/ZHVI_unpivot.csv") 
+# Show first 6 rows of data
+head(condos) 
+
+# Get unique values of "RegionType"
+unique(condos$RegionType)
+# Show row(s) with a "RegionType" of 'country'
+country <- filter(condos, RegionType == "country") 
+unique(country$RegionName)
+
+# Remove non-numerical variables that cannot be encoded
+condos <- condos%>% select(-c(RegionType, StateName)) 
+# Convert "DateFull" to date format
+condos$DateFull <- as.Date(condos$DateFull, format = "%Y-%m-%d") 
+# Convert "DateFull" to numeric format (days since January 1, 1970)
+condos$DateFull <- as.numeric(condos$DateFull)
+# Check the size of the dataset after variable removal (154216 x 7)
+dim(condos) 
+```
+
+Pre-processing and analysis continued with checking for missing values of which there were 33615 and were all in the "ZHVI" column. Since this is the target variables, removing these rows entirely ensures that the models are trained on complete data from 2000 to 2024 giving the most accurate predictions of home values for this time period. Removing these rows reduced the row count of the data to 120897. Lastly, the 'describe()' function was used to get descriptive statistics for each variable. What stood out from this summary was the skew of "ZHVI". Since the models that will be used on this data assume that the target variable is normally distributed, the skew of this variable will need to be addressed before using these models.
+```{r}
+# Check for missing values (33615 rows found)
+sum(is.na(condos)) 
+# Get count of missing values for each column to find which column(s) contain missing values ("ZHVI")
+colSums(is.na(condos)) 
+# Remove rows with  missing values
+condos <- drop_na(condos) 
+# Get size of data after removing missing values (120897 x 7)
+dim(condos) 
+
+# Get descriptive stats for each variable
+describe(select(condos, -c(RegionName)))
+```
+
+### Replacing Missing Values
+When merging the ZHVI data with the latitude and longitude date, the following five cities had missing values: Urban Honolulu, Barnstable Town, Boise City, Winston, and Bennington. This was handled in Excel Power Query by replacing this missing values with -999, however these need to be replaced with their real values in order to avoid the computer from thinking that these -999 values are outliers thus skewing predictions. The real longitude and latitude values were found on Google and manually replaced below. Also, since the 'StateName' variable is no longer being used, it was double checked that each latitude and longitude being replaced was actually -999. This was to ensure there was no possibility that a town sharing a name with one of the ones with a missing latitude or longitude was accidentally given the wrong latitude and longitude.
+```{r}
+# Manually replace missing latitude and longitude values
+# Urban Honolulu
+condos$Lattitude <- ifelse(condos$RegionName == "Urban Honolulu" & condos$Lattitude == -999, 21.3099, condos$Lattitude)
+condos$Longitude <- ifelse(condos$RegionName == "Urban Honolulu" & condos$Longitude == -999, -157.8581, condos$Longitude)
+
+#
+condos$Lattitude <- ifelse(condos$RegionName == "Barnstable Town" & condos$Lattitude == -999, 41.7003, condos$Lattitude)
+condos$Longitude <- ifelse(condos$RegionName == "Barnstable Town" & condos$Longitude == -999, -70.3002, condos$Longitude)
+
+condos$Lattitude <- ifelse(condos$RegionName == "Boise City" & condos$Lattitude == -999, 43.6150, condos$Lattitude)
+condos$Longitude <- ifelse(condos$RegionName == "Boise City" & condos$Longitude == -999, -116.2023, condos$Longitude)
+
+condos$Lattitude <- ifelse(condos$RegionName == "Winston" & condos$Lattitude == -999, 36.1040, condos$Lattitude)
+condos$Longitude <- ifelse(condos$RegionName == "Winston" & condos$Longitude == -999, -80.2544, condos$Longitude)
+
+condos$Lattitude <- ifelse(condos$RegionName == "Bennington" & condos$Lattitude == -999, 42.8781, condos$Lattitude)
+condos$Longitude <- ifelse(condos$RegionName == "Bennington" & condos$Longitude == -999, -73.1968, condos$Longitude)
+nrow(filter(condos, Lattitude == -999))
+```
+
+### Looking at the time-series for the United States data
+The original data contains a row for the United States as a whole rather than for a particular city. For modeling purposes this row will be removed as it could skew the predictions for the city-specific rows. However, plotting the time-series for this data can help examine the collective relationship between time and ZHVI in this data, which can be used for comparison purposes when this data is then modeled.
+```{r}
+# Load raw, time series data 
+condos_ts <- read_csv("/Users/olivia/Downloads/ZHVI_condos_Unpivot.csv") 
+
+# Filter for United States data and select only the date and ZHVI columns
+united_states <- condos_ts %>% filter(str_detect(.$RegionName, "United States")) %>% select(c("DateFull", "ZHVI")) 
+
+# Plot time-series
+united_states %>% 
+  ggplot(aes(x = DateFull, y = ZHVI)) + geom_area(color = "black", fill = "darkseagreen3",  alpha = 0.8) + 
+  coord_cartesian(ylim = c(min(united_states$ZHVI), max(united_states$ZHVI))) + 
+  ggtitle("Time Series for ZHVI of United States Condos/Co-ops from 2000 to 2024") + 
+  xlab("Date") + ylab("Zillow Home Value Index (ZHVI)") 
+```
+From personal knowledge, this plot illustrates important times for home values including the 2008 recession and the 2020 pandemic seen by the peak around 2008 and the rapid increase after 2020. These represent non-linear relations within the time-series data. This is important as it could be argued that "DateFull" is the most important predictor and the models used below assume linear relationships between the predictor and response variables. This lack of linearity in the "DateFull" variable could mean that these models may not be able to accurately predict ZHVI based only on the few other variables available.
+
+### Addressing Skew within the Target Variable
+The target variable, ZHVI, is heavily right-skewed with a skew value of 2.624375. As seen in the first plot below, this means that the ZHVI is not normally distributed, which poses a problem for the models that assume normality of the target variable. For this reason, the log of ZHVI will be used instead to try and correct some of this skew and make the distribution more normal before modeling it. The distribution of ZHVI after this logarithmic transformation can be seen in the second plot below, with the skew of "ZHVI" reduced down to 0.6149215.
+```{r}
+# Calculate the skew of the "ZHVI" variable before log transformation
+skew(condos$ZHVI) 
+# Plot the density of the original ZHVI distribution to show skew
+condos %>% ggplot(aes(x = ZHVI)) + geom_density(fill = "cadetblue3", alpha = 0.8) + ylab("Density") + xlab("Zillow Home Value Index (ZHVI)") + ggtitle("Distribution of ZHVI for Condos/Co-ops") 
+
+# Apply log transformation to the ZHVI values to reduce skewness
+condos$ZHVI <- log(condos$ZHVI) 
+# Rename the ZHVI column to indicate log transformation
+colnames(condos)[7] <- "ZHVI_log" 
+
+# Calculate the skew of the "ZHVI" variable after log transformation
+skew(condos$ZHVI_log)
+# Plot the density of the log-transformed ZHVI distribution to show updated skew
+condos %>% ggplot(aes(x = ZHVI_log)) + geom_density(fill = "cadetblue3", alpha = 0.8) +  
+  ylab("Density") + xlab("log of Zillow Home Value Index (ZHVI)") + ggtitle("Distribution of the log of ZHVI for Condos/Co-ops") 
+```
+Furthering the conversation on the linearity of the variables, the plots below illustrate the relationships between the log-transformed "ZHVI" variable and all of the predictor variables. Also included in each of these plots is a smooth function which helps see the relationships more clearly. These plots indicate that none of the predictor variables have a true linear relationship with "ZHVI" however the relationships with "DateFull" and "SizeRank" are the most linear. This could lead to a further hypothesis that these two variables will be the most important in predicting "ZHVI" even though they don't meet the linearity requirement of the models.
+
+Note: The rows corresponding to the 'United States', the "RegionName" and the "RegionID" column are removed in this step for reasons mentioned previously. 
+```{r}
+# Remove the rows corresponding to the United States, "RegionName", and "RegionID"
+condos <- condos %>% filter(RegionName != "United States") %>% select(-c("RegionName", "RegionID"))
+
+# Explore the relationship between the log-transformed ZHVI and predictors
+condos %>%
+  gather(-c(ZHVI_log), key = "var", value = "value") %>% 
+  ggplot(aes(x = value, y = ZHVI_log)) +
+    facet_wrap(~ var, scales = "free") +
+    geom_point() +
+    stat_smooth() +
+    ggtitle("Relationship between the log of ZHVI and the Predictor Variables")
+```
+
+## Modeling
+### Splitting data into testing and training sets
+The data is now mostly ready, but a few things still need to be performed before modeling it. First, this includes removing "RegionName" as it was only needed for plotting purposes and as mentioned previously cannot be included in the models. The data was then randomly split into training and testing sets using 70% of the data for training, 30% for testing, and setting a seed to ensure reproducibility. 
+```{r}
+# Set seed for reproducibility and split the data into training (70%) and testing (30%) sets
+set.seed(13) 
+train = sample(1 : nrow(condos), nrow(condos)*0.7) 
+condos.train = condos[train, ] 
+condos.test = condos[-train, ] 
+```
+
+### Multiple Linear Regression
+Starting with the simplest model in this project, multiple linear regression, this will serve as a baseline for measuring the accuracy of subsequent models. Using the Root Mean Squared Error (RMSE) transformed back to the orginal scale of "ZHVI" before its logarithmic transformation, we find that this model has an average error of 1.487056. This means that this model can predict "ZHVI" to within $1.487 which is already a great baseline, but it is yet to be seen if this can be improved in the next models.
+```{r}
+# Fit a multiple linear regression model on the training data
+condos.lm = lm(ZHVI_log~., condos.train)
+# Make predictions on the testing data
+lm.pred = predict(condos.lm, condos.test)
+# Calculate RMSE and transform the error back to the original scale
+exp(sqrt(mean((lm.pred - condos.test$ZHVI_log)^2))) #1.487056
+```
+
+### Ridge regression with lambda chosen by cross-validation
+The first model that will be compared to the linear model is Ridge regression. Ridge regression is also a type of linear model, however it involves adding a squared penalty (lambda) to large coefficients. By penalizing larger coefficients, ridge prevents any one predictor from dominating the model, which could help with problems such as overfitting. Using cross-validation to find the ideal lambda and the same error method as the linear model, ridge gives an error 1.487106. This is a slight increase from the linear model which may be explained by the fact that ridge regressions is especially effective for data with many predictor variables or correlated variables, of which this data does not. The plot below shows how the coefficients of the model shrink as the lambda value increases, up until the optimal lambda value used for the ridge model. 
+
+```{r}
+# Load necessary library for ridge regression
+library(glmnet)
+
+# Define grid for lambda values
+grid = 10^seq(10, -2, length = 100)
+# Create model matrices for ridge regression
+modelmatrix = model.matrix(ZHVI_log ~ ., condos.train)[,-1]
+modelmatrix.test = model.matrix(ZHVI_log ~ ., condos.test)[,-1]
+
+# Fit a ridge regression model
+condos.ridge = glmnet(modelmatrix, condos.train$ZHVI_log, alpha = 0, lambda = grid)
+# Perform cross-validation to find the best lambda value
+cv.ridge = cv.glmnet(modelmatrix, condos.train$ZHVI_log, alpha = 0)
+bestlambda = cv.ridge$lambda.min
+# Make predictions on the test data using the best lambda
+ridge.pred = predict(condos.ridge, s = bestlambda, newx = modelmatrix.test)
+
+# Calculate RMSE for ridge regression and transform the error back to the original scale
+exp(sqrt(mean((ridge.pred - condos.test$ZHVI_log)^2))) #1.487106
+
+# Plot ridge regression results
+plot(condos.ridge, xvar = "lambda")
+legend("bottomright", lwd = 1, legend = colnames(modelmatrix), cex = .7, col = 1:5)
+```
+
+### Lasso regression model with lambda chosen by cross-validation
+Similar to Ridge regression, the next model used is Lasso regression. Lasso also includes a penalty for larger coefficients, however, unlike Ridge, Lasso does not square this penalty. This means that Lasso does not penalize larger coefficients as much as Ridge which gives less importance to avoiding one predictor from dominating the rest. Cross-validation was also used to chose the optimal lambda for this model which gives an error of 1.487845. This is a worse error than both the linear and Ridge models indicating that having a higher penalty for larger coefficients is better for accurately predicting this data, but not having a penalty at all is even better for this data. The plot below again shows how the coefficients of the model shrink as the lambda value increases, up until the optimal lambda value just as the ridge model did. 
+```{r}
+# Fit a lasso regression model
+condos.lasso = glmnet(modelmatrix, condos.train$ZHVI_log, alpha = 1, lambda = grid)
+# Perform cross-validation to find the best lambda value
+cv.lasso = cv.glmnet(modelmatrix, condos.train$ZHVI_log, alpha = 1)
+bestlambda = cv.lasso$lambda.min
+# Make predictions on the test data using the best lambda
+lasso.pred = predict(condos.lasso, s = bestlambda, newx = modelmatrix.test)
+
+# Calculate RMSE for lasso regression and transform the error back to the original scale
+exp(sqrt(mean((lasso.pred - condos.test$ZHVI_log)^2))) #1.487845
+
+# Plot lasso regression results
+plot(condos.lasso, xvar = "lambda")
+legend("bottomright", lwd = 1, legend = colnames(modelmatrix), cex = .7, col = 1:5)
+```
+
+### PCR model with M chosen by cross-validation.
+The next two models are Principal Component Regression (PCR) and Partial Least Squares Regression (PLS). The first of the two, PCR, works by first transforming the original predictor variables into a smaller set of uncorrelated variables, called principal components. The goal of these components is to capture the most variation in the predictor variables which are then used as predictors in the model. To choose the optimal number of components, M, cross-validation was used.
+
+PCR models usually perform best when the original predictor variables are highly correlated which is not the case in our data as seen in the correlation plot below. Due to this, the PCR model was not able to improve on the linear model at all, with the same RMSE of 1.487056.
+```{r}
+# Load the library for PCR
+library(pls)
+
+# Fit a PCR model with cross-validation
+condos.pcr = pcr(ZHVI_log ~ ., data = condos.train, scale = TRUE, validation = "CV")
+# Determine the optimal number of components based on cross-validation (5)
+cverr.pcr <- RMSEP(condos.pcr)$val[1,,]
+opt_pcr = which.min(cverr.pcr) - 1 
+# Make predictions on the test data using the optimal number of components
+pcr.pred = predict(condos.pcr, condos.test, ncomp = opt_pcr)
+
+# Calculate RMSE for PCR and transform the error back to the original scale
+exp(sqrt(mean((pcr.pred - condos.test$ZHVI_log)^2))) #1.487056
+
+# Plot correlation between predictor variables
+library(corrplot)
+condos_cor <- condos %>% select(-c(ZHVI_log)) %>% cor()
+corrplot(condos_cor, tl.col = "black")
+```
+
+### PLS model with M chosen by cross-validation
+Like PCR, PLS also reduces the predictor variables into components. However, unlike PCR, PLS chooses these components by not only focusing on the variability in the predictor variables, but also the correlation with the response variable. Again, the optimal number of components was determined with cross-validation, but still, this model was not able to improve on either the linear nor PCR models, with the same RMSE of 1.487056.
+```{r}
+# Fit a PLS model with cross-validation
+condos.pls = plsr(ZHVI_log ~ ., data = condos.train, scale = TRUE, validation = "CV")
+# Determine the optimal number of components based on cross-validation (4)
+cverr.pls <- RMSEP(condos.pls)$val[1,,]
+opt_pls <- which.min(cverr.pls) - 1 
+# Make predictions on the test data using the optimal number of components
+pls.pred = predict(condos.pls, condos.test, ncomp = opt_pls)
+
+# Calculate RMSE for PLS and transform the error back to the original scale
+exp(sqrt(mean((pls.pred - condos.test$ZHVI_log)^2))) #1.487056
+```
+
+### Regression tree
+The final model used in this project is a regression tree. This model works by "branching" the data at certain decision points in order to predict the target variable at each "leaf". These decision points are made by whether the current record being predicted is less, equal to, or greater than a determined value of the predictor variable at that point. In the plot below these decision points are labeled by there predictor variable and the threshold for that variable. If the current record doesn't meet a threshold, the tree continues to the right, if it does meet the threshold, the tree continues to the left. The bottom of the tree denotes the "leaves" of the tree which contain the predicted ZHVI, as well as the percentage of records that were predicted at that leaf. This tree has an RMSE of 1.423684 which means this model was the only one able to improve on the linear model.
+```{r}
+# Load necessary libraries for decision trees
+library(rpart)
+library(rpart.plot)
+
+# Fit a regression tree model
+condos.tree = rpart(ZHVI_log ~ ., data = condos.train)
+# Make predictions on the test data
+tree.pred = predict(condos.tree, newdata = condos.test)
+
+# Calculate RMSE for the regression tree and transform the error back to the original scale
+exp(sqrt(mean((tree.pred - condos.test$ZHVI_log)^2)))  #1.423684
+
+# Transform ZHVI values back to original scale
+condos.tree$frame$yval <- exp(condos.tree$frame$yval)
+
+# Plot the regression tree 
+rpart.plot(condos.tree, digits = -3)
+```
+
+## Conclusions
+```{r}
+# Create a summary data frame of RMSE values for all models
+rmse_results <- data.frame(
+  model = c("Multiple Linear Regression", "Ridge Regression", "Lasso Regression", "PCR", "PLS",   
+            "Regression Tree"),
+  RMSE = c(1.487056, 1.487106, 1.487845, 1.487056, 1.487056, 1.423684)
+)
+
+# Print RMSE results
+print(arrange(rmse_results, RMSE))
+```
+
+The above chart of RMSE values for each model shows the regression tree performed the best at modeling this data. Following in second are the multiple linear regression, PCR, and 
+PLS models. PCR and PLS are tied with linear regression as they were not able to reduce the data into any less components so are essentially the original linear model. As both the linear model and the regression tree were able to predict ZHVI to within $1.50, either seem suitable for modeling this data. It was also discovered that the ridge and lasso models were not able to improve on any of the other models, so these should probably be avoided in modeling this data. This is most likely due to the minimal number of variables used in the modeling process as these models work better for lots of highly correlated variables, of which this data does not have. Also, given the non-linear relationships observed earlier, it may be beneficial to explore non-linear modeling techniques, for example a random forest, which can capture more complex interactions between features. Overall, this project highlights the significance of model selection and tuning in predictive analytics for understanding how different algorithms behave with different data. 
