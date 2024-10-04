@@ -3,7 +3,7 @@ E-mail: oliviarueter1@gmail.com
 
 LinkedIn: [www.linkedin.com/in/olivia-rueter-562287232](www.linkedin.com/in/olivia-rueter-562287232)
 
-Welcome to my portfolio! Here you will find several data science projects that have been completed both academically and personally. I have separated these projects into the 5 folders you can see in this repository, Data Cleaning, Data Analysis, Data Visualization, Data Science, and Data Communication. Each folder contains one or more projects that demonstrate a different data science related skill.
+Welcome to my portfolio! Here you will find a small sample of data science projects that have been completed both academically and personally. I have separated these projects into the folders you can see in this repository, Data Cleaning, Data Analysis, Data Visualization, and Data Science. Each folder contains one or more projects that demonstrate its respective data science related skill.
 
 ## About Me
 I am a recent graduate with a B.S. in Mathematics looking to start my career as a data scientist! I bring a profficient academic background in R and Python in which I possess many skills including but not limited to data cleaning, analysis, and visualization as well as machine learning. 
